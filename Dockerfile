@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk add curl jq
+RUN apk add curl jq bash
 
 COPY ./check.sh /check.sh
 
