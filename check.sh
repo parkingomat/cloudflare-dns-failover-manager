@@ -42,7 +42,7 @@ do
         echo "$i responded with correct status $HTTP_STATUS"
 
         # If status matches, check if body contains required string
-        if [ $SEARCHSTRING != "" ]
+        if ! test -z "$SEARCHSTRING"
         then
             if [ $(echo $HTTP_BODY | grep $SEARCHSTRING | wc -l) -gt 0 ]
             then
