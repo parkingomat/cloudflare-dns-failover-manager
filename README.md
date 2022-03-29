@@ -20,7 +20,7 @@ SEARCHZONE= The domain we will use to update cloudflare zone eg example.com
 
 SEARCHEXPECTEDCODE= Expected status code of the request eg 200, 201, 301 etc
 
-SEARCHIPS= IP addresses that will be checked. They must be spce separated including parenthesis eg: "(8.8.8.8 8.8.4.4 1.1.1.1)"
+SEARCHIPS= IP addresses that will be checked. They must be space separated "8.8.8.8 8.8.4.4 1.1.1.1"
 
 #CLOUDFLAREACCESSTOKEN= The access token (bearer) for your account. 
 
