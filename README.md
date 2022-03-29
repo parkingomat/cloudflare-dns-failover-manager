@@ -9,13 +9,19 @@ Usage:
 Create a Kubernetes Cron Job to run every X minutes and use the following eviroment variables to configure the healthchecks
 
 SEARCHSTRING= A string in the body of the response to look for in order to validate response. If empty check wil be skipped
+
 SEARCHMETHOD= The method will be useg by curl (GET / HEAD / POST)
+
 SEARCHTIMEOUT= How much time in seconds we have to wait in order to consider the request failed because of time out
+
 SEARCHURL= The full url to check eg. https://example.com/check
+
 SEARCHZONE= The domain we will use to update cloudflare zone eg example.com
+
 SEARCHEXPECTEDCODE= Expected status code of the request eg 200, 201, 301 etc
+
 SEARCHIPS= IP addresses that will be checked. They must be spce separated including parenthesis eg: "(8.8.8.8 8.8.4.4 1.1.1.1)"
+
 #CLOUDFLAREACCESSTOKEN= The access token (bearer) for your account. 
+
 CLOUDFLAREPROXY= Configure if records will use proxy mode or not. Valid values are 'true' and 'false' 
-
-
