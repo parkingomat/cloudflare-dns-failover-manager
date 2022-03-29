@@ -21,7 +21,7 @@ ZONEID=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones?name=$SEARCH
 
 
 # Perform health check for each IP address to see if you get a valid response
-for i in "$(SEARCHIPS[@])"
+for i in "${SEARCHIPS[@]}"
 do
     echo "Cheking IP: $i"
 
