@@ -1,16 +1,4 @@
-#!/bin/sh
-
-# Enviroment Variables index
-# SEARCHSTRING="background"
-# SEARCHMETHOD=GET
-# SEARCHTIMEOUT=100
-# SEARCHURL="https://www.example.com"
-# SEARCHZONE="example.com"
-# SEARCHEXPECTEDCODE=200
-# SEARCHIPS=(8.8.8.8 8.8.4.4)
-# CLOUDFLAREACCESSTOKEN="XXXXXXX"
-# CLOUDFLAREPROXY=true
-
+#!/bin/bash
 
 # Calculated variable values
 RESULT=0
@@ -21,6 +9,7 @@ then
 PORT=443
 fi
 DNSRECORD=$(echo $SEARCHURL | awk -F[/:] '{print $4}')
+IFS=' ' read -r -a SEARCHIPS <<< $SEARCHIPS
 
 
 
@@ -32,7 +21,7 @@ ZONEID=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones?name=$SEARCH
 
 
 # Perform health check for each IP address to see if you get a valid response
-for i in "${SEARCHIPS[@]}"
+for i in "$(SEARCHIPS[@])"
 do
     echo "Cheking IP: $i"
 
@@ -108,11 +97,4 @@ do
     
     fi
 done
-
-
-
-
-
-
-
-
+exit 0
