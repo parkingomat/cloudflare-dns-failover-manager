@@ -25,6 +25,8 @@ for i in "${SEARCHIPS[@]}"
 do
     echo "Cheking IP: $i"
 
+    RESULT=0
+
     # Get response according to parameters
     HTTP_RESPONSE=$(curl -m $SEARCHTIMEOUT --silent --write-out "HTTPSTATUS:%{http_code}" -X $SEARCHMETHOD $SEARCHURL --resolve $DNSRECORD:$PORT:$i --insecure)
 
