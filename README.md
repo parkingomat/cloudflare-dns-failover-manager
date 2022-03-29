@@ -1,7 +1,9 @@
 # cloudflare-dns-failover-manager
 Cloudflare DNS Failover Manager
 
-A lightweight container that monitors via curl a list of Public IPs with custom health checks. According to check result, it adds or removes DNS entries in cloudflare via cloudflare API. It is a free way to immitate cloudflare's load balancing feature. It is build entirely on bash to avoid any dependencies
+A lightweight container that monitors via curl a list of Public IPs with custom health checks. According to check result, it adds or removes DNS entries in cloudflare via cloudflare API. It is a free way to immitate cloudflare's load balancing feature (failover). It is build entirely on bash to avoid any dependencies.
+
+Keep in mind that cloudflare with proxy mode enabled doesn't perform any round robin in the hostname entries but always sends the trafic to the first record it finds.
 
 
 # Usage:
